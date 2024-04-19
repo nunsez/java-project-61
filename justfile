@@ -11,7 +11,7 @@ run:
     {{gradlew}} run
 
 lint:
-    {{gradlew}} detekt # ktlintCheck
+    {{gradlew}} detektMain
 
 format:
     {{gradlew}} ktlintFormat

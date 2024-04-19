@@ -3,11 +3,10 @@ version = "0.0.1"
 
 plugins {
     // Apply the org.jetbrains.kotlin.jvm Plugin to add support for Kotlin.
-    // alias(libs.plugins.jvm)
-    kotlin("jvm") version "1.9.23"
+    alias(libs.plugins.jvm)
 
     // Kotlin linter
-    id("io.gitlab.arturbosch.detekt") version("1.23.6")
+    alias(libs.plugins.detekt)
 
     // Apply the application plugin to add support for building a CLI application in Java.
     application
@@ -21,6 +20,8 @@ repositories {
 dependencies {
     // This dependency is used by the application.
     // implementation(libs.guava)
+
+    detektPlugins(libs.detekt.formatting)
 }
 
 // testing {
@@ -43,10 +44,6 @@ java {
 application {
     // Define the main class for the application.
     mainClass = "$group.App"
-}
-
-tasks.getByName("run", JavaExec::class) {
-    standardInput = System.`in`
 }
 
 detekt {
@@ -90,6 +87,6 @@ detekt {
     basePath = projectDir.absolutePath
 }
 
-tasks.named("check") {
-    dependsOn(tasks.named("detekt"))
+tasks.getByName<JavaExec>("run") {
+    standardInput = System.`in`
 }
