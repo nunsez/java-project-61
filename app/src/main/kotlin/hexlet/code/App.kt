@@ -5,6 +5,7 @@ class App {
         @JvmStatic
         fun main(args: Array<String>) {
             println("Welcome to the Brain Games!")
+            Cli.greet()
         }
     }
 }

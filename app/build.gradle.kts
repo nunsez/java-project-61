@@ -41,3 +41,7 @@ application {
     // Define the main class for the application.
     mainClass = "$group.App"
 }
+
+tasks.getByName("run", JavaExec::class) {
+    standardInput = System.`in`
+}
