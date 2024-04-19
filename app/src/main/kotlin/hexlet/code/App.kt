@@ -1,5 +1,6 @@
 package hexlet.code
 
+@Suppress("UtilityClassWithPublicConstructor")
 class App {
     companion object {
         @JvmStatic
