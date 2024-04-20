@@ -6,7 +6,7 @@ class PrimeGame : Game() {
     }
 
     override fun newRound(): GameRound {
-        val number = (1..47).random()
+        val number = (1..numberLimit).random()
 
         val question = question(number)
         val rightAnswer = rightAnswer(number)
@@ -30,5 +30,9 @@ class PrimeGame : Game() {
         }
 
         return true
+    }
+
+    companion object {
+        private const val numberLimit = 47
     }
 }

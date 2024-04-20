@@ -1,16 +1,14 @@
 package hexlet.code
 
 class CalcGame : Game() {
-    private final val operations = arrayOf("+", "-", "*")
-
     override fun rule(): String {
         return "What is the result of the expression?"
     }
 
     override fun newRound(): GameRound {
         val op = operations.random()
-        val n1 = (1..49).random()
-        val n2 = (1..49).random()
+        val n1 = (1..numberLimit).random()
+        val n2 = (1..numberLimit).random()
 
         val question = question(op, n1, n2)
         val rightAnswer = rightAnswer(op, n1, n2)
@@ -35,5 +33,11 @@ class CalcGame : Game() {
             "/" -> n1 / n2
             else -> null
         }
+    }
+
+    companion object {
+        private final val operations = arrayOf("+", "-", "*")
+
+        private const val numberLimit = 49
     }
 }

@@ -31,11 +31,13 @@ class GcdGame : Game() {
     }
 
     private fun generateNumber(): Int {
-        val capacity = 10
-
         // protect the game from answer '1'
-        val gcdProtector = (1..capacity).random()
+        val gcdProtector = (1..numberLimit).random()
 
-        return gcdProtector * (1..capacity).random()
+        return gcdProtector * (1..numberLimit).random()
+    }
+
+    companion object {
+        private const val numberLimit = 10
     }
 }

@@ -1,36 +1,6 @@
 package hexlet.code
 
 class GameRunner {
-    companion object {
-        fun start() {
-            val choice = askChoice()
-            if (choice == "0") return
-
-            var game: Game
-
-            try {
-                game = Game.init(choice)
-            } catch (e: IllegalArgumentException) {
-                println(e.message)
-                return
-            }
-
-            println("Your choice: $choice\n")
-            game.run(GameRunner())
-        }
-
-        private fun askChoice(): String {
-            println("Please enter the game number and press Enter.")
-            printChoices()
-            return readln()
-        }
-
-        private fun printChoices() {
-            println(Game.choices)
-            println("0 - Exit")
-        }
-    }
-
     fun runGame(game: Game) {
         val rounds = game.rounds()
         var round = 1
@@ -64,6 +34,36 @@ class GameRunner {
         } else {
             println("\"$playerAnswer\" is wrong answer ;(. Correct answer was \"$rightAnswer\"")
             return false
+        }
+    }
+
+    companion object {
+        fun start() {
+            val choice = askChoice()
+            if (choice == "0") return
+
+            var game: Game
+
+            try {
+                game = Game.init(choice)
+            } catch (e: IllegalArgumentException) {
+                println(e.message)
+                return
+            }
+
+            println("Your choice: $choice\n")
+            game.run(GameRunner())
+        }
+
+        private fun askChoice(): String {
+            println("Please enter the game number and press Enter.")
+            printChoices()
+            return readln()
+        }
+
+        private fun printChoices() {
+            println(Game.choices)
+            println("0 - Exit")
         }
     }
 }
