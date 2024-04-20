@@ -5,8 +5,6 @@ abstract class Game {
         private set
 
     companion object {
-        final val validChoices = arrayOf("1,", "2", "3", "4", "5", "6")
-
         final val choices = """
         1 - Greet
         2 - Even
