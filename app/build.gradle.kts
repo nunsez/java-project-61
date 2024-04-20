@@ -10,8 +10,6 @@ plugins {
 
     // Apply the application plugin to add support for building a CLI application in Java.
     application
-
-    checkstyle
 }
 
 repositories {
@@ -98,10 +96,6 @@ tasks.register("removeDotGradle") {
 
 tasks.named("installDist") {
     dependsOn(":removeDotGradle")
-}
-
-tasks.withType<Checkstyle>() {
-    exclude(".gradle/**")
 }
 
 tasks.getByName<JavaExec>("run") {
