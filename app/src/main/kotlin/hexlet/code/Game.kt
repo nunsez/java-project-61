@@ -5,7 +5,7 @@ abstract class Game {
         private set
 
     companion object {
-        final val validChoices = arrayOf("1,", "2", "3", "4", "5")
+        final val validChoices = arrayOf("1,", "2", "3", "4", "5", "6")
 
         final val choices = """
         1 - Greet
@@ -13,6 +13,7 @@ abstract class Game {
         3 - Calc
         4 - GCD
         5 - Progression
+        6 - Prime
         """.trimIndent()
 
         fun init(choice: String): Game {
@@ -22,6 +23,7 @@ abstract class Game {
                 "3" -> CalcGame()
                 "4" -> GcdGame()
                 "5" -> ProgressionGame()
+                "6" -> PrimeGame()
                 else -> throw IllegalArgumentException("Invalid choice: $choice")
             }
 
