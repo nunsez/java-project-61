@@ -1,6 +1,6 @@
 project_root := justfile_directory()
-gradlew := join(justfile_directory(), "gradlew")
-shell-nix := join(justfile_directory(), "shell.nix")
+gradlew := join(project_root, "app", "gradlew") + " --project-dir " + join(project_root, "app")
+shell-nix := join(project_root, "shell.nix")
 
 alias s := shell
 alias l := lint
@@ -22,4 +22,4 @@ format:
     {{gradlew}} ktlintFormat
 
 run-dist:
-    app/build/install/app/bin/app
+    {{join(project_root, "app", "build", "install", "app", "bin", "app")}}
