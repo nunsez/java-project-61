@@ -89,6 +89,17 @@ detekt {
     basePath = projectDir.absolutePath
 }
 
+tasks.register("removeDotGradle") {
+    doLast {
+        val dotGradleDir = File("$projectDir/.gradle")
+        dotGradleDir.deleteRecursively()
+    }
+}
+
+tasks.named("installDist") {
+    dependsOn(":removeDotGradle")
+}
+
 tasks.withType<Checkstyle>() {
     exclude(".gradle/**")
 }
