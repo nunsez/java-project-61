@@ -23,13 +23,11 @@ class PrimeGame : Game() {
     }
 
     private fun isPrime(number: Int): Boolean {
-        val max = Math.sqrt(number.toDouble()).toInt()
+        if (number < 2) return false
 
-        for (i in 2..max) {
-            if (number % i == 0) return false
-        }
+        val sqrt = Math.sqrt(number.toDouble()).toInt()
 
-        return true
+        return (2..sqrt).none { number % it == 0 }
     }
 
     companion object {
