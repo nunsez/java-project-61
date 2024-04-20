@@ -10,6 +10,8 @@ plugins {
 
     // Apply the application plugin to add support for building a CLI application in Java.
     application
+
+    checkstyle
 }
 
 repositories {
@@ -85,6 +87,10 @@ detekt {
     // Specify the base path for file paths in the formatted reports.
     // If not set, all file paths reported will be absolute file path.
     basePath = projectDir.absolutePath
+}
+
+tasks.withType<Checkstyle>() {
+    exclude(".gradle/**")
 }
 
 tasks.getByName<JavaExec>("run") {
