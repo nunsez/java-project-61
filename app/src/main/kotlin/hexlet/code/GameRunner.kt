@@ -32,7 +32,7 @@ class GameRunner {
             println("Correct!")
             return true
         } else {
-            println("\"$playerAnswer\" is wrong answer ;(. Correct answer was \"$rightAnswer\"")
+            println("'$playerAnswer' is wrong answer ;(. Correct answer was '$rightAnswer'")
             return false
         }
     }
@@ -46,6 +46,7 @@ class GameRunner {
 
             try {
                 game = Game.init(choice)
+                println("Hello, ${game.player.name}!")
             } catch (e: IllegalArgumentException) {
                 println(e.message)
                 return

@@ -10,6 +10,6 @@ class GreetGame : Game() {
     }
 
     override fun run(runner: GameRunner) {
-        println("Hello, ${player.name}!")
+        // do nothing
     }
 }
