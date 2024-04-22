@@ -12,8 +12,8 @@ class ProgressionGame : Game() {
         @Suppress("MagicNumber")
         val step = (1..5).random()
 
-        val hiddenElementIndex = (0..(progressionLength - 1)).random()
-        val progression = makeProgression(start, step, progressionLength)
+        val hiddenElementIndex = (0..<PROGRESSION_LENGTH).random()
+        val progression = makeProgression(start, step)
 
         val rightAnswer = progression[hiddenElementIndex].toString()
         val question = question(progression, hiddenElementIndex)
@@ -29,11 +29,11 @@ class ProgressionGame : Game() {
         return "Question: $progressionString"
     }
 
-    private fun makeProgression(start: Int, step: Int, length: Int): IntArray {
-        return IntArray(length) { start + it * step }
+    private fun makeProgression(start: Int, step: Int): IntArray {
+        return IntArray(PROGRESSION_LENGTH) { start + it * step }
     }
 
     companion object {
-        private const val progressionLength = 10
+        private const val PROGRESSION_LENGTH = 10
     }
 }

@@ -7,8 +7,8 @@ class CalcGame : Game() {
 
     override fun newRound(): GameRound {
         val op = operations.random()
-        val n1 = (1..numberLimit).random()
-        val n2 = (1..numberLimit).random()
+        val n1 = (1..NUMBER_LIMIT).random()
+        val n2 = (1..NUMBER_LIMIT).random()
 
         val question = question(op, n1, n2)
         val rightAnswer = rightAnswer(op, n1, n2)
@@ -36,8 +36,8 @@ class CalcGame : Game() {
     }
 
     companion object {
-        private final val operations = arrayOf("+", "-", "*")
+        private val operations = arrayOf("+", "-", "*")
 
-        private const val numberLimit = 49
+        private const val NUMBER_LIMIT = 49
     }
 }

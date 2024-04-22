@@ -1,12 +1,14 @@
 package hexlet.code
 
+import kotlin.math.sqrt
+
 class PrimeGame : Game() {
     override fun rule(): String {
         return "Answer 'yes' if given number is prime. Otherwise answer 'no'."
     }
 
     override fun newRound(): GameRound {
-        val number = (1..numberLimit).random()
+        val number = (1..NUMBER_LIMIT).random()
 
         val question = question(number)
         val rightAnswer = rightAnswer(number)
@@ -25,12 +27,12 @@ class PrimeGame : Game() {
     private fun isPrime(number: Int): Boolean {
         if (number < 2) return false
 
-        val sqrt = Math.sqrt(number.toDouble()).toInt()
+        val sqrt = sqrt(number.toDouble()).toInt()
 
         return (2..sqrt).none { number % it == 0 }
     }
 
     companion object {
-        private const val numberLimit = 47
+        private const val NUMBER_LIMIT = 47
     }
 }

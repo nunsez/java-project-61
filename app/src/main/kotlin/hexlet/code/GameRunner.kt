@@ -42,7 +42,7 @@ class GameRunner {
             val choice = askChoice()
             if (choice == "0") return
 
-            var game: Game
+            val game: Game
 
             try {
                 game = Game.init(choice)

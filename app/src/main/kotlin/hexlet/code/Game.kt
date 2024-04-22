@@ -15,7 +15,7 @@ abstract class Game {
     }
 
     companion object {
-        final val choices = """
+        val choices = """
         1 - Greet
         2 - Even
         3 - Calc

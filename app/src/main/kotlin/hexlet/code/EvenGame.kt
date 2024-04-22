@@ -6,7 +6,7 @@ class EvenGame : Game() {
     }
 
     override fun newRound(): GameRound {
-        val number = (1..numberLimit).random()
+        val number = (1..NUMBER_LIMIT).random()
         return GameRound(question(number), rightAnswer(number))
     }
 
@@ -26,6 +26,6 @@ class EvenGame : Game() {
     }
 
     companion object {
-        private const val numberLimit = 99
+        private const val NUMBER_LIMIT = 99
     }
 }
