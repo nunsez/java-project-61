@@ -3,7 +3,7 @@ package hexlet.code.games;
 import java.util.Random;
 import java.util.StringJoiner;
 
-public class ProgressionGame extends Game {
+public final class ProgressionGame extends Game {
 
     private static final int PROGRESSION_LENGTH = 10;
 

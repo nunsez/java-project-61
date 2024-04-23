@@ -11,7 +11,7 @@ import hexlet.code.games.GreetGame;
 import hexlet.code.games.PrimeGame;
 import hexlet.code.games.ProgressionGame;
 
-public class GameEngine {
+public final class GameEngine {
 
     public static final String CHOICES = """
             1 - Greet

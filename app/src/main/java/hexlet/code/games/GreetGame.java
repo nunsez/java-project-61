@@ -2,7 +2,7 @@ package hexlet.code.games;
 
 import hexlet.code.GameEngine;
 
-public class GreetGame extends Game {
+public final class GreetGame extends Game {
 
     @Override
     public String getRule() {

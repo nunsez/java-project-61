@@ -9,7 +9,7 @@ public final class Player {
         this.name = name;
     }
 
-    public static Player fromCli() {
+    static Player fromCli() {
         System.out.println("May I have your name?");
         var name = new Scanner(System.in).nextLine();
         return new Player(name);
