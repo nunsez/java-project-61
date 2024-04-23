@@ -34,7 +34,7 @@ public final class PrimeGame extends Game {
 
         var sqrt = Math.sqrt(number);
 
-        for (var i = 2; i < sqrt; i++) {
+        for (var i = 2; i <= sqrt; i++) {
             if (number % i == 0) {
                 return false;
             }
