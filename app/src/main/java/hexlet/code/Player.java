@@ -5,8 +5,8 @@ import java.util.Scanner;
 public final class Player {
     private final String name;
 
-    Player(String name) {
-        this.name = name;
+    Player(String playerName) {
+        this.name = playerName;
     }
 
     static Player fromCli() {

@@ -2,7 +2,7 @@ package hexlet.code.games;
 
 import java.util.Random;
 
-public final class GcdGame extends Game {
+public final class GcdGame extends AbstractGame {
 
     private static final int MAX_NUMBER = 10;
 
@@ -20,12 +20,10 @@ public final class GcdGame extends Game {
         return gcd(num2, num1 % num2);
     }
 
-    @Override
     public String getRule() {
         return "Find the greatest common divisor of given numbers.";
     }
 
-    @Override
     public GameRound getNewRound() {
         var num1 = generateNumber();
         var num2 = generateNumber();

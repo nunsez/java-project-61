@@ -5,9 +5,9 @@ public final class GameRound {
     private final String task;
     private final String rightAnswer;
 
-    GameRound(String task, String rightAnswer) {
-        this.task = task;
-        this.rightAnswer = rightAnswer;
+    GameRound(String taskValue, String rightAnswerValue) {
+        this.task = taskValue;
+        this.rightAnswer = rightAnswerValue;
     }
 
     public String getRightAnswer() {

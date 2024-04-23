@@ -2,16 +2,14 @@ package hexlet.code.games;
 
 import java.util.Random;
 
-public final class EvenGame extends Game {
+public final class EvenGame extends AbstractGame {
 
     private static final int MAX_NUMBER = 99;
 
-    @Override
     public String getRule() {
         return "Answer 'yes' if the number is even, otherwise answer 'no'.";
     }
 
-    @Override
     public GameRound getNewRound() {
         var number = new Random().nextInt(1, MAX_NUMBER + 1);
 

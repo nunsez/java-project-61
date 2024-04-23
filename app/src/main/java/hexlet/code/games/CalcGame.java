@@ -2,16 +2,14 @@ package hexlet.code.games;
 
 import java.util.Random;
 
-public final class CalcGame extends Game {
+public final class CalcGame extends AbstractGame {
 
     private static final int MAX_NUMBER = 49;
 
-    @Override
     public String getRule() {
         return "What is the result of the expression?";
     }
 
-    @Override
     public GameRound getNewRound() {
         var random = new Random();
 

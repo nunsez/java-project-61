@@ -2,16 +2,14 @@ package hexlet.code.games;
 
 import java.util.Random;
 
-public final class PrimeGame extends Game {
+public final class PrimeGame extends AbstractGame {
 
     private static final int MAX_NUMBER = 47;
 
-    @Override
     public String getRule() {
         return "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
     }
 
-    @Override
     public GameRound getNewRound() {
         var rand = new Random();
         var number = rand.nextInt(1, MAX_NUMBER + 1);

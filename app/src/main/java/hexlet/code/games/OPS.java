@@ -30,15 +30,14 @@ enum OPS {
         return OPS.values()[randomIndex];
     }
 
-    OPS(String op) {
-        this.op = op;
+    OPS(String operation) {
+        this.op = operation;
     }
 
     int calc(int num1, int num2) {
         return 0;
     }
 
-    @Override
     public String toString() {
         return op;
     }

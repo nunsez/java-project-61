@@ -3,29 +3,16 @@ package hexlet.code.games;
 import hexlet.code.Player;
 import hexlet.code.GameEngine;
 
-public abstract class Game {
+public interface Game {
+    Player getPlayer();
 
-    private static final int DEFAULT_ROUNDS = 3;
+    void setPlayer(Player player);
 
-    private Player player;
+    String getRule();
 
-    public Player getPlayer() {
-        return player;
-    }
+    GameRound getNewRound();
 
-    public void setPlayer(Player player) {
-        this.player = player;
-    }
+    int getRounds();
 
-    public abstract String getRule();
-
-    public abstract GameRound getNewRound();
-
-    public int getRounds() {
-        return DEFAULT_ROUNDS;
-    }
-
-    public void run(GameEngine engine) {
-        engine.runGame(this);
-    }
+    void run(GameEngine engine);
 }
