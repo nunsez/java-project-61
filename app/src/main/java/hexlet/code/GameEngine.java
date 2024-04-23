@@ -49,7 +49,7 @@ public class GameEngine {
     public static Player greet() {
         System.out.println("Welcome to the Brain Games!");
         var player = Player.fromCli();
-        System.out.printf("Hello %s!\n", player.getName());
+        System.out.printf("Hello, %s!\n", player.getName());
 
         return player;
     }
